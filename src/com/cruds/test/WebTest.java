@@ -46,4 +46,15 @@ public class WebTest {
 		assertTrue(!o.isEmpty());
 		assertTrue(s.isEmpty());
 	}
+	
+	@Test
+	public void testGetOrderItems()
+	{
+		WebcartDAO dao = new WebcartDAO();
+		List<OrderItem> o,s = new ArrayList<>();
+		o = dao.getOrderItems(1);
+		s = dao.getOrderItems(0);
+		assertTrue(!o.isEmpty());
+		assertTrue(s.isEmpty());
+	}
 }
