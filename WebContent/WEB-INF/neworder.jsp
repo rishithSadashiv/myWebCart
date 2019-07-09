@@ -25,7 +25,7 @@ body  {
 	
 	<%	DateFormat df =new SimpleDateFormat("dd/MM/yyyy");
 		String user = (String)session.getAttribute("USERNAME");
-		List<Product> cart = (List<Product>) request.getAttribute("CART");
+		List<Product> cart = (List<Product>) session.getAttribute("CART");
 		String orderid = String.valueOf(session.getAttribute("ORDERID"));
 		float subtotal = (float)request.getAttribute("SUBTOTAL");
 		String orderDate = df.format(request.getAttribute("ORDERDATE"));
@@ -36,7 +36,7 @@ body  {
 	
 	<h1><%=user %>'s Order</h1><br/>
 	
-	<a href="LoginServlet">Home</a>	<br>
+	<a href="index.html">Home</a>	<br>
 	<br>
 	
 	<b>Order ID = <%=orderid %></b>
