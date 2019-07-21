@@ -36,7 +36,7 @@ body  {
 	
 	<h1><%=user %>'s Order</h1><br/>
 	
-	<a href="index.html">Home</a>	<br>
+	<a href="index.jsp">Home</a>	<br>
 	<br>
 	
 	<b>Order ID = <%=orderid %></b>
@@ -64,6 +64,9 @@ body  {
 	
 	<%
 		}
+	
+		//code to delete all items in cart
+		cart.clear();
 	%>
 		</table><br/>
 		<br/>

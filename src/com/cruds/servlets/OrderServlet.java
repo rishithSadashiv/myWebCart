@@ -102,16 +102,15 @@ public class OrderServlet extends HttpServlet {
 			WebService.addOrderItem(new OrderItem(orderID, cart.get(i).getPid(), cart.get(i).getQuantity(), subTotal));
 		}
 		//code to pass the values to a new .jsp and display order
-		request.setAttribute("CART", cart);
-		request.setAttribute("ORDERID", orderID);
+		session.setAttribute("CART", cart);
+		session.setAttribute("ORDERID", orderID);
 		request.setAttribute("SUBTOTAL", subTotalBill);
 		request.setAttribute("ORDERDATE", orderDate);
 		request.setAttribute("DLVDATE", dlvDate);
 		request.setAttribute("TAX", tax);
 		request.setAttribute("GRANDTOTAL", grandtotal);
 		
-		//code to delete all items in cart
-		cart.clear();
+		
 		RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/neworder.jsp");
 		rd.forward(request, response);
 	}
